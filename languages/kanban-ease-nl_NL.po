@@ -1,0 +1,134 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Kanban Ease Contacts Form\n"
+"POT-Creation-Date: 2024-12-06 12:00+0100\n"
+"PO-Revision-Date: 2024-12-06 12:00+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Kanban Ease Settings"
+msgstr "Kanban Ease Instellingen"
+
+msgid "Kanban Ease"
+msgstr "Kanban Ease"
+
+msgid "Plugin Name: Kanban Ease Contacts Form"
+msgstr "Plugin Naam: Kanban Ease Contacts Formulieren"
+
+msgid "Adds contacts or tickets to your Kanban Ease companies via customizable forms"
+msgstr "Voegt contacten of tickets toe aan je Kanban Ease bedrijven via aanpasbare formulieren"
+
+msgid "Enter your Kanban Ease API Token. You can generate this in your Kanban Ease dashboard. Click "Change your company" and open the tab "API tokens"."
+msgstr "Voer je Kanban Ease API Token in. Je kunt deze genereren in je Kanban Ease dashboard. Klik op "Verander van bedrijf" en open het tabblad "API tokens"."
+
+msgid "Kanban Ease Settings"
+msgstr "Kanban Ease Instellingen"
+
+msgid "Use this page to configure the Kanban Ease plugin settings. <a href=\"https://kanbanease.com\" target=\"_blank\">Learn more about Kanban Ease</a>."
+msgstr "Gebruik deze pagina om de Kanban Ease plugin instellingen te configureren. <a href=\"https://kanbanease.com\" target=\"_blank\">Meer informatie over Kanban Ease</a>."
+
+msgid "Shortcode usage"
+msgstr "Shortcode gebruik"
+
+msgid "Add the contacts form to any page or post using the shortcode. You can customize which fields are displayed."
+msgstr "Voeg het contactformulier toe aan elke pagina of bericht met de shortcode. Je kunt aanpassen welke velden worden weergegeven."
+
+msgid "Basic usage:"
+msgstr "Basis gebruik:"
+
+msgid "Customize fields:"
+msgstr "Velden aanpassen:"
+
+msgid "Available fields:"
+msgstr "Beschikbare velden:"
+
+msgid "First name (optional)"
+msgstr "Voornaam (optioneel)"
+
+msgid "Last name (optional)"
+msgstr "Achternaam (optioneel)"
+
+msgid "Email address (optional)"
+msgstr "E-mailadres (optioneel)"
+
+msgid "Phone number (optional)"
+msgstr "Telefoonnummer (optioneel)"
+
+msgid "Parameters:"
+msgstr "Parameters:"
+
+msgid "Parameter"
+msgstr "Parameter"
+
+msgid "Required"
+msgstr "Verplicht"
+
+msgid "Description"
+msgstr "Omschrijving"
+
+msgid "No"
+msgstr "Nee"
+
+msgid "Comma-separated list of fields to display. Default shows all fields."
+msgstr "Komma-gescheiden lijst van weer te geven velden. Standaard worden alle velden weergegeven."
+
+msgid "Your first name"
+msgstr "Je voornaam"
+
+msgid "Your last name"
+msgstr "Je achternaam"
+
+msgid "Your name"
+msgstr "Je naam"
+
+msgid "Your email address"
+msgstr "Je e-mailadres"
+
+msgid "Your phone number"
+msgstr "Je telefoonnummer"
+
+msgid "I agree that my data will be processed by"
+msgstr "Ik ga ermee akkoord dat mijn gegevens worden verwerkt door"
+
+msgid "Submit"
+msgstr "Versturen"
+
+msgid "Please agree to the data processing."
+msgstr "Ga akkoord met de gegevensverwerking."
+
+msgid "Sending..."
+msgstr "Versturen..."
+
+msgid "Thank you! Your information has been submitted successfully."
+msgstr "Bedankt! Je gegevens zijn succesvol verzonden."
+
+msgid "An error occurred. Please try again later."
+msgstr "Er is een fout opgetreden. Probeer het later opnieuw."
+
+msgid "API Configuration"
+msgstr "API Configuratie"
+
+msgid "API Token"
+msgstr "API Token"
+
+msgid "Field"
+msgstr "Veld"
+
+msgid "First name of the contact"
+msgstr "Voornaam van het contact"
+
+msgid "Last name of the contact"
+msgstr "Achternaam van het contact"
+
+msgid "Email address"
+msgstr "E-mailadres"
+
+msgid "Phone number"
+msgstr "Telefoonnummer"
+
+msgid "Need help? Visit our <a href=\"https://docs.kanbanease.com\" target=\"_blank\">documentation</a> or <a href=\"https://kanbanease.com/contact\" target=\"_blank\">contact support</a>."
+msgstr "Hulp nodig? Bekijk onze <a href=\"https://docs.kanbanease.com\" target=\"_blank\">documentatie</a> of <a href=\"https://kanbanease.com/contact\" target=\"_blank\">neem contact op met support</a>."
