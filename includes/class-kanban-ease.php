@@ -11,7 +11,8 @@
 defined('ABSPATH') || exit;
 
 class KanbanEaseContactsForm {
-    private $options;
+    private $api_key;
+    private const ALLOWED_FIELDS = ['first_name', 'last_name', 'email', 'phone_number'];
 
     public function __construct() {
         add_action('admin_menu', [$this, 'add_admin_menu']);
@@ -19,7 +20,7 @@ class KanbanEaseContactsForm {
         add_shortcode('kanban_ease_contact_form', [$this, 'render_contact_form']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
 
-        $this->options = get_option('kanban_ease_settings');
+        $this->api_key = get_option('kanban_ease_contacts_form_api_key');
     }
 
     public function add_admin_menu() {
@@ -33,7 +34,11 @@ class KanbanEaseContactsForm {
     }
 
     public function init_settings() {
-        register_setting('kanban_ease_settings', 'kanban_ease_settings');
+        register_setting(
+            'kanban_ease_settings',
+            'kanban_ease_contacts_form_api_key',
+            'sanitize_text_field',
+        );
 
         add_settings_section(
             'kanban_ease_settings_section',
@@ -52,10 +57,10 @@ class KanbanEaseContactsForm {
     }
 
     public function render_api_token_field() {
-        $value = isset($this->options['api_token']) ? $this->options['api_token'] : '';
+        $value = get_option('kanban_ease_contacts_form_api_key', '');
 ?>
         <input type='text'
-            name='kanban_ease_settings[api_token]'
+            name='kanban_ease_contacts_form_api_key'
             value='<?php echo esc_attr($value); ?>'
             class='regular-text'>
         <p class="description">
@@ -73,6 +78,8 @@ class KanbanEaseContactsForm {
             <h1>
                 <?php echo esc_html(get_admin_page_title()); ?>
             </h1>
+
+            <?php settings_errors(); ?>
 
             <div class="notice notice-info">
                 <p>
@@ -141,11 +148,18 @@ class KanbanEaseContactsForm {
     }
 
     public function render_contact_form($atts) {
+        if (empty($this->api_key)) {
+            return esc_html__('Please configure the Kanban Ease API token in the WordPress admin settings.', 'kanban-ease-contacts-form');
+        }
+
         $atts = shortcode_atts([
-            'show_fields' => 'first_name,last_name,email,phone_number',
+            'show_fields' => implode(',', self::ALLOWED_FIELDS),
         ], $atts);
 
-        $show_fields = explode(',', str_replace(' ', '', $atts['show_fields']));
+        $show_fields = array_intersect(
+            explode(',', str_replace(' ', '', $atts['show_fields'])),
+            self::ALLOWED_FIELDS
+        );
 
         ob_start();
     ?>
@@ -226,7 +240,7 @@ class KanbanEaseContactsForm {
 
             wp_localize_script('kanban-ease-form', 'kanbanEase', [
                 'api_url' => 'https://my.kanbanease.com/api/v1',
-                'api_token' => $this->options['api_token'] ?? '',
+                'api_token' => $this->api_key ?? '',
                 'nonce' => wp_create_nonce('kanban_ease_nonce'),
                 'i18n' => [
                     'agree_required' => esc_html__('Please agree to the data processing.', 'kanban-ease-contacts-form'),

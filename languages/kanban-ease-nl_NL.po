@@ -132,3 +132,6 @@ msgstr "Telefoonnummer"
 
 msgid "Need help? Visit our <a href=\"https://docs.kanbanease.com\" target=\"_blank\">documentation</a> or <a href=\"https://kanbanease.com/contact\" target=\"_blank\">contact support</a>."
 msgstr "Hulp nodig? Bekijk onze <a href=\"https://docs.kanbanease.com\" target=\"_blank\">documentatie</a> of <a href=\"https://kanbanease.com/contact\" target=\"_blank\">neem contact op met support</a>."
+
+msdid "Please configure the Kanban Ease API token in the WordPress admin settings."
+msgstr "Configureer de Kanban Ease API-token in de WordPress-beheerinstellingen."
