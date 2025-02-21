@@ -26,23 +26,24 @@ jQuery(document).ready(function ($) {
 
         // Collect form data
         const formData = {
+            form_id: $form.find('[name="form"]').val(),
             first_name: $form.find('[name="first_name"]').val(),
             last_name: $form.find('[name="last_name"]').val(),
+            company_name: $form.find('[name="company_name"]').val(),
             email: $form.find('[name="email"]').val(),
             phone_number: $form.find('[name="phone_number"]').val(),
             approved: $('#agreement').is(':checked'),
         };
 
-        // Send to Kanban Ease API
+        // Send to WordPress REST API endpoint instead of directly to Kanban Ease
         $.ajax({
-            url: kanbanEase.api_url + '/contacts',
+            url: wpApiSettings.root + 'kanban-ease/v1/submit-form',
             method: 'POST',
-            headers: {
-                'Authorization': 'Bearer ' + kanbanEase.api_token,
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-WP-Nonce', wpApiSettings.nonce);
             },
             data: JSON.stringify(formData),
+            contentType: 'application/json',
             success: function (response) {
                 $messages
                     .addClass('success')

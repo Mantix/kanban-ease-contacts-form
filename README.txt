@@ -30,9 +30,13 @@ Basic usage:
 Show specific fields:
 `[kanban_ease_contact_form show_fields="first_name,email,phone_number"]`
 
+Use a specific website form from your Kanban Ease environment:
+`[kanban_ease_contact_form form="1"]
+
 = Available Fields =
 * first_name
 * last_name
+* company_name
 * email
 * phone_number
 
